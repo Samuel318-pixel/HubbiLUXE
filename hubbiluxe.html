@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HubbiLuxe OS - Download</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0078D4, #005A9E);
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 1rem 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar h1 {
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo {
+            font-size: 28px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .download-btn {
+            background: #00B294;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .download-btn:hover {
+            background: #008F76;
+        }
+
+        .packages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .package-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            padding: 2rem;
+            transition: transform 0.3s;
+        }
+
+        .package-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .package-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .package-card p {
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
+        }
+
+        .features {
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-item {
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        .feature-item i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.2);
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+            .packages {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <h1><i class="fas fa-cube logo"></i> HubbiLuxe OS</h1>
+    </nav>
+
+    <div class="container">
+        <section class="hero">
+            <h2>Bem-vindo ao HubbiLuxe OS</h2>
+            <p>Um sistema operacional moderno, seguro e eficiente para todos</p>
+            <a href="#" class="download-btn" onclick="iniciarDownload()">
+                <i class="fas fa-download"></i> Download Gratuito
+            </a>
+        </section>
+
+        <section class="packages">
+            <div class="package-card">
+                <h3><i class="fas fa-laptop"></i> HubbiLuxe Home</h3>
+                <p>Perfeito para uso pessoal e familiar. Inclui todas as ferramentas essenciais.</p>
+                <a href="#" class="download-btn" onclick="downloadPacote('home')">Download</a>
+            </div>
+            <div class="package-card">
+                <h3><i class="fas fa-briefcase"></i> HubbiLuxe Pro</h3>
+                <p>Recursos avançados para profissionais e empresas.</p>
+                <a href="#" class="download-btn" onclick="downloadPacote('pro')">Download</a>
+            </div>
+            <div class="package-card">
+                <h3><i class="fas fa-server"></i> HubbiLuxe Server</h3>
+                <p>Solução robusta para servidores e infraestrutura.</p>
+                <a href="#" class="download-btn" onclick="downloadPacote('server')">Download</a>
+            </div>
+        </section>
+
+        <section class="features">
+            <h2>Recursos Principais</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Segurança Avançada</h3>
+                    <p>Proteção em tempo real contra ameaças</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Alto Desempenho</h3>
+                    <p>Otimizado para máxima velocidade</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-cloud"></i>
+                    <h3>Cloud Integration</h3>
+                    <p>Sincronização automática com a nuvem</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>Interface Moderna</h3>
+                    <p>Design intuitivo e personalizável</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 HubbiLuxe OS. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function iniciarDownload() {
+            alert('Iniciando download do HubbiLuxe OS...\nTamanho: 4.2 GB\nVelocidade estimada: 10MB/s');
+        }
+
+        function downloadPacote(tipo) {
+            const pacotes = {
+                'home': 'HubbiLuxe Home Edition',
+                'pro': 'HubbiLuxe Professional',
+                'server': 'HubbiLuxe Server Edition'
+            };
+            alert(`Iniciando download do ${pacotes[tipo]}...\nPor favor, aguarde.`);
+        }
+
+        // Animação suave do scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
