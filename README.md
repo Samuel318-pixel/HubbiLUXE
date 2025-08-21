@@ -1,2 +1,1 @@
-# HubbiLUXE
-Um sistema operacional focado para qualquer tipo de pessoa.
+a system that helps you with your current system like a sub system
